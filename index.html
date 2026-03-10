@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <title>Happy Birthday Vardhini ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- Floating hearts (global) -->
+<div id="heartsLayer" aria-hidden="true"></div>
+<!-- Confetti canvas -->
+<canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+<!-- ══════════════════════════════════
+     SCREEN 1 — INTRO
+══════════════════════════════════ -->
+<div id="introScreen" class="screen">
+  <div class="intro-card">
+    <div class="intro-emoji-row">🎂 ✨ 🎊</div>
+    <p class="intro-label">A small surprise for you</p>
+    <h1 class="intro-name">Vardhini <span class="pulse-heart">❤️</span></h1>
+    <p class="intro-sub">Something special is waiting...</p>
+    <button class="click-btn" id="clickMeBtn" onclick="goToApp()">
+      <span class="btn-glow-ring"></span>
+      Click Me &nbsp;🎁
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SCREEN 2 — MAIN APP
+══════════════════════════════════ -->
+<div id="mainApp" class="screen hidden">
+
+  <!-- ─── HOME PAGE ─── -->
+  <div id="homePage" class="page active">
+    <div class="scroll-area">
+
+      <header class="home-head">
+        <p class="head-tag">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <h2 class="head-title">Happy Birthday</h2>
+        <p class="head-name">Vardhini <span class="hb-heart">❤️</span></p>
+      </header>
+
+      <!-- Photo -->
+      <div class="photo-wrap">
+        <div class="photo-glow-ring">
+          <img
+            id="vardhiniPhoto"
+            src="vardhini.jpg"
+            alt="Vardhini"
+            class="photo-img"
+            onerror="this.onerror=null;this.src='https://api.dicebear.com/9.x/adventurer/svg?seed=Vardhini&backgroundColor=c0aede,ffd5dc&skinColor=f2d3b1';"
+          />
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="msg-card">
+        <p class="msg-text">
+          Seeing you achieve your goals<br/>
+          and make your parents proud<br/>
+          is truly inspiring.<br/><br/>
+          Wishing you success, happiness,<br/>
+          and a life full of beautiful moments.<br/><br/>
+          <span class="msg-sign">Happy Birthday, Vardhini ❤️</span>
+        </p>
+      </div>
+
+      <!-- Birthday cake -->
+      <div class="cake-section">
+        <div class="cake-wrap">
+          <!-- candle -->
+          <div class="candle">
+            <div class="flame-box">
+              <div class="f-outer"></div>
+              <div class="f-inner"></div>
+              <div class="f-glow"></div>
+            </div>
+            <div class="candle-stick"></div>
+          </div>
+          <!-- layers -->
+          <div class="cake-layer cl-top">
+            <span class="layer-deco">🌸 💖 🌸</span>
+            <div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div>
+          </div>
+          <div class="cake-layer cl-mid">
+            <div class="dots"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="cake-layer cl-bot">
+            <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="drip d4"></div><div class="drip d5"></div>
+          </div>
+          <div class="cake-board"></div>
+        </div>
+        <p class="cake-wish">Make a Wish! 🕯️</p>
+      </div>
+
+    </div><!-- end scroll-area -->
+  </div>
+
+  <!-- ─── GALLERY PAGE ─── -->
+  <div id="galleryPage" class="page">
+    <div class="scroll-area">
+      <div class="page-header">
+        <h2>📸 Gallery</h2>
+        <p>Beautiful Memories</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </div>
+
+  <!-- ─── ABOUT PAGE ─── -->
+  <div id="aboutPage" class="page">
+    <div class="scroll-area about-wrap">
+
+      <div class="about-icon">💝</div>
+
+      <div class="about-card">
+        <h2 class="about-h">For You, Vardhini</h2>
+        <div class="about-line"></div>
+        <p class="about-msg">
+          Seeing you achieve your goals<br/>
+          and make your parents proud<br/>
+          is truly inspiring.<br/><br/>
+          Wishing you success, happiness,<br/>
+          and a life full of beautiful moments.<br/><br/>
+          <strong>Happy Birthday Vardhini. ❤️</strong>
+        </p>
+        <div class="about-flowers">🌸 &nbsp; 🌺 &nbsp; 🌼 &nbsp; 🌸</div>
+      </div>
+
+      <div class="about-card" style="margin-top:14px;">
+        <h3 class="fact-h">You are someone who is...</h3>
+        <ul class="fact-list">
+          <li>💫 Kind and genuinely wonderful</li>
+          <li>🌟 A ray of light to everyone around</li>
+          <li>💪 Strong, smart and inspiring</li>
+          <li>🎉 Deserving of every happiness!</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ─── BOTTOM NAV ─── -->
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-btn active" data-tab="home">
+      <span class="nav-ico">🏠</span>
+      <span class="nav-lbl">Home</span>
+      <span class="nav-pip"></span>
+    </button>
+    <button class="nav-btn" data-tab="gallery">
+      <span class="nav-ico">📸</span>
+      <span class="nav-lbl">Gallery</span>
+      <span class="nav-pip"></span>
+    </button>
+    <button class="nav-btn" data-tab="about">
+      <span class="nav-ico">ℹ️</span>
+      <span class="nav-lbl">About</span>
+      <span class="nav-pip"></span>
+    </button>
+  </nav>
+
+</div><!-- end mainApp -->
+
+<audio id="bgMusic" src="song.mp3" loop preload="none"></audio>
+<script src="script.js"></script>
+</body>
+</html>
